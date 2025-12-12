@@ -1,0 +1,82 @@
+{
+  "placeholderImages": [
+    {
+      "id": "gallery-1",
+      "description": "Coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1708481480603-b47ea65c80b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxnYW1pbmclMjBzZXR1cHxlbnwwfHx8fDE3NjU1MDA4MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Coming soon"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkaWdpdGFsJTIwYXJ0fGVufDB8fHx8MTc2NTQ1NzkzMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Coming soon"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1614920847152-93b7e90b4bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtZWNoYW5pY2FsJTIwa2V5Ym9hcmR8ZW58MHx8fHwxNzY1NDU4Njk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Coming soon"
+    },
+    {
+      "id": "gallery-4",
+      "description": "Coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1751713971850-57236ce4c89b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaGFyYWN0ZXIlMjBhcnR8ZW58MHx8fHwxNzY1NTIxNzczfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Coming soon"
+    },
+    {
+      "id": "gallery-5",
+      "description": "Coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1678501512127-0cd403983940?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxnYW1pbmclMjBjb3JuZXJ8ZW58MHx8fHwxNzY1NTIxNzczfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Coming soon"
+    },
+    {
+      "id": "gallery-6",
+      "description": "Coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1625014618427-fbc980b974f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHwzZCUyMHJlbmRlcnxlbnwwfHx8fDE3NjU1MDY3MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Coming soon"
+    },
+    {
+      "id": "gallery-7",
+      "description": "Coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1510519138101-570d1dca3d66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkZXNrJTIwc2V0dXB8ZW58MHx8fHwxNzY1NDY0NTM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Coming soon"
+    },
+    {
+      "id": "gallery-8",
+      "description": "Coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1564585447193-cd9a0cf42a36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwaXhlbCUyMGFydHxlbnwwfHx8fDE3NjU0NzYxMzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Coming soon"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Coming soon",
+      "imageUrl": "https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9maWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY1NTA5NzM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Coming soon"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Avatar for Samantha",
+      "imageUrl": "https://images.unsplash.com/photo-1581403341630-a6e0b9d2d257?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwcm9maWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY1NTA5NzM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "profile portrait"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Avatar for Kenji",
+      "imageUrl": "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9maWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY1NTA5NzM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "profile portrait"
+    },
+    {
+      "id": "member-of-the-month-avatar",
+      "description": "Avatar for Member of the Month",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwcm9maWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzY1NTA5NzM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "hero-background",
+      "description": "Abstract background for hero section",
+      "imageUrl": "https://images.unsplash.com/photo-1684139517679-032b7213ad2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhYnN0cmFjdCUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY1NDMxNzM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract background"
+    }
+  ]
+}
