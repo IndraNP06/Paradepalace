@@ -5,7 +5,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'Parade Palace',
+  title: 'Parade Palace | Discord Community',
   description: 'The official community for Parade Palace.',
 };
 

@@ -59,7 +59,7 @@ export default function Home() {
                 <Typewriter
                   texts={[
                     'Welcome to Parade Palace',
-                    'The Ultimate Community',
+                    'The Discord Community',
                   ]}
                   className="font-headline text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
                   textClassName="text-primary"

@@ -83,7 +83,7 @@ export const teamMembers = [
     socials: {
       twitter: null,
       instagram: "https://www.instagram.com/yardanzachava_/",
-      youtube: null,
+      youtube: "https://youtube.com/@yardanzachava?si=ml0MJ69NPADrscPC",
       tiktok: null,
     }
   },
