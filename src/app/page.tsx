@@ -27,7 +27,7 @@ export default function Home() {
           setStats(prev => prev.map(s => {
             if (s.label === "Total Anggota") return { ...s, value: data.totalMembers.toString() };
             if (s.label === "Online Sekarang") return { ...s, value: data.onlineMembers.toString() };
-            if (s.label === "Bot") return { ...s, value: data.botCount.toString() };
+            if (s.label === "Anggota Offline") return { ...s, value: data.offlineMembers.toString() };
             return s;
           }));
         }

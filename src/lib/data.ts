@@ -1,5 +1,5 @@
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Award, Bot, Check, Mic, ShieldCheck, Trophy, Users, X } from 'lucide-react';
+import { Award, Bot, Check, Mic, Moon, ShieldCheck, Trophy, Users, X } from 'lucide-react';
 
 export const serverStats = [
   {
@@ -13,9 +13,9 @@ export const serverStats = [
     icon: Mic,
   },
   {
-    value: "8",
-    label: "Bot",
-    icon: Bot,
+    value: "12,608",
+    label: "Anggota Offline",
+    icon: Moon,
   },
 ];
 

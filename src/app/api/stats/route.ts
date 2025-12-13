@@ -15,7 +15,7 @@ export async function GET() {
         return NextResponse.json({
             totalMembers: data.approximate_member_count || 0,
             onlineMembers: data.approximate_presence_count || 0,
-            botCount: 8 // Static value for bots
+            offlineMembers: (data.approximate_member_count || 0) - (data.approximate_presence_count || 0)
         });
 
     } catch (error) {
