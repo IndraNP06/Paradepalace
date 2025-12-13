@@ -15,7 +15,7 @@ export default function Footer() {
             <span className="font-headline text-lg font-bold">Parade Palace</span>
           </Link>
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Parade Palace. All rights reserved.
+            © {currentYear} Parade Palace. Hak Cipta Dilindungi.
           </p>
         </div>
         <div className="flex items-center gap-2">

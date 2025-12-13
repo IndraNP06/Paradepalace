@@ -58,19 +58,19 @@ export default function Home() {
               <div className="text-center lg:text-left">
                 <Typewriter
                   texts={[
-                    'Welcome to Parade Palace',
-                    'The Discord Community',
+                    'Selamat Datang di Parade Palace',
+                    'Komunitas Discord',
                   ]}
                   className="font-headline text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
                   textClassName="text-primary"
                 />
                 <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-300 font-body lg:mx-0">
-                  The ultimate community for gamers, creators, and tech enthusiasts. Join the conversation, participate in events, and make new friends.
+                  Komunitas terbaik untuk gamer, kreator, dan penggemar teknologi. Bergabunglah dalam percakapan, ikuti acara seru, dan cari teman baru.
                 </p>
                 <div className="mt-10">
                   <Button size="lg" className="text-lg shadow-lg shadow-primary/30 transition-transform hover:scale-105" asChild>
                     <Link href="https://discord.gg/MATaddGGZe" target="_blank" rel="noopener noreferrer">
-                      Join Discord Now
+                      Gabung Discord Sekarang
                       <LogIn className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
@@ -125,10 +125,10 @@ export default function Home() {
           <FadeIn>
             <div className="text-center">
               <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-                Meet Our Team
+                Temui Tim Kami
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                The people who make Parade Palace a great place to be.
+                Orang-orang yang menjadikan Parade Palace tempat yang luar biasa.
               </p>
             </div>
           </FadeIn>

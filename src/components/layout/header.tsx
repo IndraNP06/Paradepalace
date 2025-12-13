@@ -11,9 +11,9 @@ import React from "react";
 import { AiChat } from "../ai-chat";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/features", label: "Features" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/", label: "Beranda" },
+  { href: "/features", label: "Fitur" },
+  { href: "/gallery", label: "Galeri" },
 ];
 
 export default function Header() {
@@ -54,7 +54,7 @@ export default function Header() {
             */}
             <Button asChild>
               <Link href="https://discord.gg/MATaddGGZe" target="_blank" rel="noopener noreferrer">
-                Join Discord
+                Gabung Discord
                 <LogIn className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -97,7 +97,7 @@ export default function Header() {
                   </nav>
                   <Button className="mt-4" asChild>
                     <Link href="https://discord.gg/MATaddGGZe" target="_blank" rel="noopener noreferrer">
-                      Join Discord
+                      Gabung Discord
                       <LogIn className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
