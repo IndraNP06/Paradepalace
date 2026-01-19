@@ -42,8 +42,11 @@ export default function AdminGalleryPage() {
                 ...doc.data()
             })) as GalleryItem[]
             setItems(data)
-        } catch (error) {
+        } catch (error: any) {
             console.error("Error fetching gallery items:", error)
+            console.error("Error Code:", error.code);
+            console.error("Error Message:", error.message);
+
             // Fallback: fetch without sorting if index missing
             try {
                 const querySnapshot = await getDocs(collection(db, "gallery_items"))

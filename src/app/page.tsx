@@ -43,7 +43,16 @@ export default function Home() {
 
     async function fetchTeam() {
       try {
+        console.log("Attempting to fetch team from Firestore...");
+        console.log("Firebase Config Check (Public):", {
+          projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+          authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+          hasApiKey: !!process.env.NEXT_PUBLIC_FIREBASE_API_KEY
+        });
+
         const querySnapshot = await getDocs(collection(db, "team_members"));
+        console.log(`Successfully fetched ${querySnapshot.size} team members.`);
+
         const data = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
@@ -57,8 +66,13 @@ export default function Home() {
         });
 
         setTeam(data);
-      } catch (error) {
+      } catch (error: any) {
         console.error("Error fetching team:", error);
+        if (error.code === 'permission-denied') {
+          console.error("PERMISSION DENIED: Check Firestore Security Rules. Ensure 'team_members' collection allows public read.");
+        } else if (error.code === 'unavailable') {
+          console.error("NETWORK ERROR: Check your internet connection or Firewalls.");
+        }
       } finally {
         setIsTeamLoading(false);
       }
