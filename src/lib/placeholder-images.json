@@ -2,51 +2,73 @@
   "placeholderImages": [
     {
       "id": "gallery-1",
-      "description": "Coming soon",
+      "description": "Gaming Setup",
       "imageUrl": "https://images.unsplash.com/photo-1708481480603-b47ea65c80b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxnYW1pbmclMjBzZXR1cHxlbnwwfHx8fDE3NjU1MDA4MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Coming soon"
+      "imageHint": "Gaming Setup",
+      "additionalImages": [
+        "https://images.unsplash.com/photo-1642821373181-696a54913e93?q=80&w=1080&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1598550476439-6847785fcea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnYW1pbmclMjBzZXR1cHxlbnwwfHx8fDE3NjU1MDA4MTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      ],
+      "date": "12 Dec 2024"
     },
     {
       "id": "gallery-2",
-      "description": "Coming soon",
+      "description": "Digital Art Showcase",
       "imageUrl": "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkaWdpdGFsJTIwYXJ0fGVufDB8fHx8MTc2NTQ1NzkzMXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Coming soon"
+      "imageHint": "Digital Art",
+      "date": "15 Dec 2024",
+      "additionalImages": [
+        "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkaWdpdGFsJTIwYXJ0fGVufDB8fHx8MTc2NTQ1NzkzMXww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1563089145-599997674d42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxuZW9uJTIwYXJ0fGVufDB8fHx8MTc2NTQ1NzkzMXww&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "id": "gallery-3",
-      "description": "Coming soon",
+      "description": "Mechanical Keyboard Collection",
       "imageUrl": "https://images.unsplash.com/photo-1614920847152-93b7e90b4bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtZWNoYW5pY2FsJTIwa2V5Ym9hcmR8ZW58MHx8fHwxNzY1NDU4Njk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Coming soon"
+      "imageHint": "Mechanical Keyboard",
+      "date": "18 Dec 2024",
+      "additionalImages": [
+        "https://images.unsplash.com/photo-1595225476474-87563907a212?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxrZXlib2FyZHxlbnwwfHx8fDE3NjU1MjI1NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "id": "gallery-4",
-      "description": "Coming soon",
+      "description": "Character Concept Art",
       "imageUrl": "https://images.unsplash.com/photo-1751713971850-57236ce4c89b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaGFyYWN0ZXIlMjBhcnR8ZW58MHx8fHwxNzY1NTIxNzczfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Coming soon"
+      "imageHint": "Character Art",
+      "date": "20 Dec 2024"
     },
     {
       "id": "gallery-5",
-      "description": "Coming soon",
+      "description": "Cozy Gaming Corner",
       "imageUrl": "https://images.unsplash.com/photo-1678501512127-0cd403983940?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxnYW1pbmclMjBjb3JuZXJ8ZW58MHx8fHwxNzY1NTIxNzczfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Coming soon"
+      "imageHint": "Gaming Corner",
+      "date": "22 Dec 2024"
     },
     {
       "id": "gallery-6",
-      "description": "Coming soon",
+      "description": "3D Render Project",
       "imageUrl": "https://images.unsplash.com/photo-1625014618427-fbc980b974f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHwzZCUyMHJlbmRlcnxlbnwwfHx8fDE3NjU1MDY3MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Coming soon"
+      "imageHint": "3D Render",
+      "date": "24 Dec 2024",
+      "additionalImages": [
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMDNkfGVufDB8fHx8MTc2NTUyMjYzMXww&ixlib=rb-4.1.0&q=80&w=1080"
+      ]
     },
     {
       "id": "gallery-7",
-      "description": "Coming soon",
+      "description": "Minimalist Desk Setup",
       "imageUrl": "https://images.unsplash.com/photo-1510519138101-570d1dca3d66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkZXNrJTIwc2V0dXB8ZW58MHx8fHwxNzY1NDY0NTM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Coming soon"
+      "imageHint": "Desk Setup",
+      "date": "26 Dec 2024"
     },
     {
       "id": "gallery-8",
-      "description": "Coming soon",
+      "description": "Pixel Art Creation",
       "imageUrl": "https://images.unsplash.com/photo-1564585447193-cd9a0cf42a36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwaXhlbCUyMGFydHxlbnwwfHx8fDE3NjU0NzYxMzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "Coming soon"
+      "imageHint": "Pixel Art",
+      "date": "28 Dec 2024"
     },
     {
       "id": "avatar-1",

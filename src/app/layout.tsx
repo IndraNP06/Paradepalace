@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
+import HeaderWrapper from '@/components/layout/header-wrapper';
+import FooterWrapper from '@/components/layout/footer-wrapper';
+import { AuthProvider } from '@/context/auth-context';
 
 export const metadata: Metadata = {
   title: 'Parade Palace | Discord Community',
@@ -23,12 +24,15 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased bg-background text-foreground">
         <div className="relative flex min-h-dvh flex-col bg-background">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <AuthProvider>
+            <HeaderWrapper />
+            <main className="flex-1">{children}</main>
+            <FooterWrapper />
+          </AuthProvider>
         </div>
         <Toaster />
       </body>
     </html>
   );
 }
+
