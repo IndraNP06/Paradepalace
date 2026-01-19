@@ -25,6 +25,17 @@ let analytics: Analytics;
 let storage: ReturnType<typeof getStorage>;
 
 try {
+    // Debug logging to verify Env Vars are loaded
+    console.log("[FIREBASE_DEBUG] Config:", {
+        hasApiKey: !!firebaseConfig.apiKey,
+        apiKeyLength: firebaseConfig.apiKey?.length,
+        projectId: firebaseConfig.projectId
+    });
+
+    if (!firebaseConfig.apiKey) {
+        console.error("[FIREBASE_CRITICAL] API Key is missing! Check Vercel Env Vars.");
+    }
+
     app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
     auth = getAuth(app);
     db = getFirestore(app);
