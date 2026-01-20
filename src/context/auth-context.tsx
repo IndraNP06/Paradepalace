@@ -12,7 +12,8 @@ import {
     sendPasswordResetEmail,
     User as FirebaseUser
 } from "firebase/auth";
-import { firebaseAuth } from "@/lib/firebase";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { firebaseAuth, db } from "@/lib/firebase";
 
 interface User {
     name: string;
@@ -38,21 +39,41 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const router = useRouter();
 
     useEffect(() => {
-        // Guard against uninitialized auth (missing API key)
         if (!firebaseAuth || !firebaseAuth.app) {
             setLoading(false);
             return;
         }
 
-        const unsubscribe = onAuthStateChanged(firebaseAuth, (firebaseUser) => {
+        const unsubscribe = onAuthStateChanged(firebaseAuth, async (firebaseUser) => {
             if (firebaseUser) {
-                // In a real app, you might fetch additional user details from Firestore here
-                // using firebaseUser.uid
-                setUser({
-                    name: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || "User",
-                    email: firebaseUser.email || "",
-                    role: "admin", // Default role for now
-                });
+                try {
+                    // Fetch user role from Firestore
+                    const userDocRef = doc(db, "users", firebaseUser.uid);
+                    const userDoc = await getDoc(userDocRef);
+
+                    let role: "admin" | "user" = "user";
+
+                    if (userDoc.exists()) {
+                        const userData = userDoc.data();
+                        // Safely cast or check role
+                        const r = userData.role;
+                        if (r === "admin") role = "admin";
+                    }
+
+                    setUser({
+                        name: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || "User",
+                        email: firebaseUser.email || "",
+                        role: role,
+                    });
+                } catch (error) {
+                    console.error("Error fetching user role:", error);
+                    // Fallback in case of error, ensuring LEAST privilege
+                    setUser({
+                        name: firebaseUser.displayName || "User",
+                        email: firebaseUser.email || "",
+                        role: "user",
+                    });
+                }
             } else {
                 setUser(null);
             }
@@ -82,11 +103,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             return;
         }
         try {
-            await createUserWithEmailAndPassword(firebaseAuth, email, password);
+            const userCredential = await createUserWithEmailAndPassword(firebaseAuth, email, password);
+            const user = userCredential.user;
+
             // Update profile with name
-            if (firebaseAuth.currentUser) {
-                await updateProfile(firebaseAuth.currentUser, { displayName: name });
-            }
+            await updateProfile(user, { displayName: name });
+
+            // Create user document in Firestore with default "user" role
+            await setDoc(doc(db, "users", user.uid), {
+                name: name,
+                email: email,
+                role: "user", // Default role
+                createdAt: new Date(),
+            });
+
             router.push("/admin");
         } catch (error) {
             console.error("Register error:", error);

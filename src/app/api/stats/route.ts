@@ -10,7 +10,11 @@ export async function GET() {
         });
 
         if (!res.ok) throw new Error('Failed to fetch invite info');
-        const data = await await res.json();
+
+        // Note: In Development, this fetch is NOT cached by default, so it hits Discord API every time.
+        // This causes the >1000ms latency you see. 
+        // In Production, it will be cached for 60s as configured above.
+        const data = await res.json();
 
         return NextResponse.json({
             totalMembers: data.approximate_member_count || 0,
