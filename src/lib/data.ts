@@ -174,7 +174,7 @@ export const uniqueBots = [
   { name: "PokeMeow", description: "Bot RPG Pokémon berbasis ekonomi dengan sistem grinding, lootbox, dan tingkat kelangkaan (rarity) yang detail. Fokus pada pencarian aktif melalui command untuk memburu Shiny, Legendary, serta menyelesaikan quest harian.", avatar: '/ppbotdc/pokemeow.webp' },
 ];
 
-export const events = [
+export const events: { isoDate: string; time: string; title: string; description: string }[] = [
   // { isoDate: "2024-08-19T14:00:00.000Z", time: "9:00 PM WIB", title: "Movie Night", description: "Kami akan menonton film klasik sci-fi pilihan komunitas. Siapkan popcorn Anda!" },
   // { isoDate: "2024-08-21T13:00:00.000Z", time: "8:00 PM WIB", title: "Game Tournament", description: "Bergabunglah dengan kami untuk turnamen Valorant persahabatan. Hadiah untuk tim pemenang!" },
   // { isoDate: "2024-08-23T13:30:00.000Z", time: "8:30 PM WIB", title: "Karaoke Night", description: "Tunjukkan bakat terpendam Anda, dari menyanyi hingga komedi tunggal." },
