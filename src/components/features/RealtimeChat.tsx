@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import { db, auth } from '@/lib/firebase';
+import { db, firebaseAuth } from '@/lib/firebase';
 import { collection, query, orderBy, limit, addDoc, onSnapshot, serverTimestamp, Timestamp } from 'firebase/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Button } from '@/components/ui/button';
@@ -21,7 +21,7 @@ interface Message {
 }
 
 export function RealtimeChat() {
-    const [user] = useAuthState(auth);
+    const [user] = useAuthState(firebaseAuth);
     const [messages, setMessages] = useState<Message[]>([]);
     const [newMessage, setNewMessage] = useState('');
     const [loading, setLoading] = useState(true);
