@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Connectivity Test</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .status { padding: 10px; border-radius: 4px; margin-bottom: 10px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .pending { background-color: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+    <h1>Firebase Connectivity Test</h1>
+    <div id="status" class="status pending">Initializing...</div>
+    <div id="logs"></div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, initializeFirestore } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+        // Hardcoded config to eliminate env var issues
+        const firebaseConfig = {
+            apiKey: "AIzaSyCCfIDd3oRD0RIOqTA2ZzuaAIVIs64yOVA",
+            authDomain: "paradepalace-web.firebaseapp.com",
+            projectId: "paradepalace-web",
+            storageBucket: "paradepalace-web.firebasestorage.app",
+            messagingSenderId: "512751216852",
+            appId: "1:512751216852:web:0fdb122aa1a8447d857341",
+            measurementId: "G-0N1R6WC2KP"
+        };
+
+        function log(msg) {
+            const div = document.createElement('div');
+            div.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+            document.getElementById('logs').appendChild(div);
+            console.log(msg);
+        }
+
+        async function testConnection() {
+            try {
+                log("Initializing App...");
+                const app = initializeApp(firebaseConfig);
+                
+                log("Initializing Firestore (Standard)...");
+                const db = getFirestore(app);
+
+                log("Attempting to fetch 'team_members'...");
+                
+                try {
+                    const querySnapshot = await getDocs(collection(db, "team_members"));
+                    log(`SUCCESS! Found ${querySnapshot.size} documents.`);
+                    document.getElementById('status').className = 'status success';
+                    document.getElementById('status').textContent = 'Connection Successful (Standard)';
+                } catch (e1) {
+                    log(`Standard connection failed: ${e1.message}`);
+                    log("Retrying with Long Polling...");
+                    
+                    // Re-init with long polling (might need page reload in real app, but trying here)
+                    // Note: In module system, re-init might be tricky, but let's try a fresh specific test if this fails.
+                    document.getElementById('status').className = 'status error';
+                    document.getElementById('status').textContent = `Standard Failed: ${e1.message}. Please Check Console.`;
+                }
+
+            } catch (e) {
+                log(`CRITICAL ERROR: ${e.message}`);
+                document.getElementById('status').className = 'status error';
+                document.getElementById('status').textContent = `Error: ${e.message}`;
+            }
+        }
+
+        testConnection();
+    </script>
+</body>
+</html>

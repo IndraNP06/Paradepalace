@@ -163,8 +163,8 @@ export const rankingSystem = [
 
 export const specialRoles = [
   { name: "Server Booster", icon: ShieldCheck, description: "Diberikan karena telah boost server. Memberikan warna dan ikon unik." },
-  // { name: "Juara Acara", icon: Trophy, description: "Diberikan kepada pemenang acara komunitas besar. Tanda keahlian sejati." },
-  // { name: "Artisan", icon: Award, description: "Untuk anggota yang menyumbangkan seni dan konten luar biasa kepada komunitas." },
+  { name: "Juara Acara", icon: Trophy, description: "Diberikan kepada pemenang acara komunitas besar. Tanda keahlian sejati." },
+  { name: "Artisan", icon: Award, description: "Untuk anggota yang menyumbangkan seni dan konten luar biasa kepada komunitas." },
   { name: "Creator", icon: Mic, description: "YouTuber, Content Creator dan streamer di komunitas kami." },
 ];
 

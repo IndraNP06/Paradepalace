@@ -1,6 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, initializeFirestore } from "firebase/firestore";
 import { getAnalytics, isSupported } from "firebase/analytics";
 import { getStorage } from "firebase/storage";
 
@@ -38,7 +38,11 @@ try {
 
     app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
     auth = getAuth(app);
-    db = getFirestore(app);
+    // Initialize Firestore with long polling to avoid "unavailable" errors
+    // caused by WebSocket blocking in some environments.
+    db = initializeFirestore(app, {
+        experimentalForceLongPolling: true,
+    });
     storage = getStorage(app);
 
     // Analytics is only supported in browser environment

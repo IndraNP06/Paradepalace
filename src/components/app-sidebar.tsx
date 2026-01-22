@@ -14,7 +14,8 @@ import {
     SquareTerminal,
     LogOut,
     User,
-    LayoutDashboard
+    LayoutDashboard,
+    Sparkles
 } from "lucide-react"
 
 import {
@@ -74,6 +75,10 @@ const data = {
                 {
                     title: "Settings",
                     url: "/admin/settings",
+                },
+                {
+                    title: "Features",
+                    url: "/admin/features",
                 },
             ],
         },
