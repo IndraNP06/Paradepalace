@@ -95,33 +95,24 @@ export default function ProfilePage({ params }: { params: Promise<{ slug: string
   return (
     <div className="relative min-h-screen w-full bg-background font-sans text-foreground overflow-x-hidden">
       {/* Dynamic Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-0 left-1/4 h-[500px] w-[500px] bg-primary/20 blur-[120px] rounded-full mix-blend-screen opacity-20" />
-        <div className="absolute bottom-0 right-1/4 h-[500px] w-[500px] bg-purple-600/20 blur-[120px] rounded-full mix-blend-screen opacity-20" />
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-5 blur-3xl scale-125"
-          style={{ backgroundImage: `url(${member.avatar})` }}
-        />
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
-      </div>
+      {/* Background is handled globally by PixelStars */}
 
       <div className="container max-w-4xl mx-auto p-4 pt-24 pb-20">
         {/* Back Button */}
         <div className="mb-8">
-          <Button variant="ghost" className="group gap-2 text-muted-foreground hover:text-primary transition-colors pl-0 hover:bg-transparent" asChild>
+          <Button variant="outline" className="group gap-2 font-headline uppercase text-muted-foreground hover:text-primary transition-all border-4 border-white/10 bg-background hover:bg-primary/10 rounded-none shadow-[4px_4px_0_0_rgba(255,255,255,0.1)] hover:shadow-[2px_2px_0_0_rgba(255,255,255,0.1)] hover:translate-y-[2px] hover:translate-x-[2px]" asChild>
             <Link href="/">
-              <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
-              <span className="text-lg font-medium">Kembali ke Beranda</span>
+              <ArrowLeft className="h-4 w-4" />
+              <span className="text-xs">BACK TO MENU</span>
             </Link>
           </Button>
         </div>
 
         <FadeIn>
-          <div className="relative rounded-3xl bg-card/50 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden">
+          <div className="relative rounded-none bg-card/80 backdrop-blur-xl border-4 border-white/10 shadow-[12px_12px_0_0_rgba(0,0,0,0.8)] overflow-hidden">
             {/* Banner Section */}
-            <div className="h-48 sm:h-64 w-full bg-gradient-to-r from-primary/80 to-purple-600/80 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            <div className="h-48 sm:h-64 w-full bg-secondary relative overflow-hidden border-b-4 border-white/10">
+              <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
             </div>
 
             <div className="px-6 sm:px-10 pb-10 relative">
@@ -129,35 +120,35 @@ export default function ProfilePage({ params }: { params: Promise<{ slug: string
               <div className="flex flex-col sm:flex-row gap-6 relative -mt-20 sm:-mt-24 mb-8">
                 {/* Avatar */}
                 <div className="flex-shrink-0 relative group mx-auto sm:mx-0">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-primary to-purple-600 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500" />
-                  <Avatar className="h-40 w-40 sm:h-48 sm:w-48 border-[6px] border-background shadow-2xl relative">
-                    <AvatarImage src={member.avatar} alt={member.name} className="object-cover" />
-                    <AvatarFallback className="text-5xl font-bold bg-primary text-primary-foreground">
+                  <div className="absolute -inset-1 bg-primary opacity-0 group-hover:opacity-100 transition duration-300 blur-sm" />
+                  <Avatar className="h-40 w-40 sm:h-48 sm:w-48 border-[6px] border-background shadow-[8px_8px_0_0_rgba(0,0,0,1)] relative rounded-none">
+                    <AvatarImage src={member.avatar} alt={member.name} className="object-cover" style={{ imageRendering: 'pixelated' }} />
+                    <AvatarFallback className="text-5xl font-headline font-bold bg-primary text-primary-foreground rounded-none">
                       {member.name.charAt(0)}
                     </AvatarFallback>
                   </Avatar>
                   {/* Status Indicator */}
-                  <div className="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-green-500 border-[5px] border-background" title="Online" />
+                  <div className="absolute bottom-[-10px] right-[-10px] h-8 w-8 rounded-none bg-green-500 border-[4px] border-background shadow-[2px_2px_0_0_rgba(0,0,0,1)]" title="Online" />
                 </div>
 
                 {/* Name & Actions */}
                 <div className="flex-1 pt-20 sm:pt-24 text-center sm:text-left space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                     <div>
-                      <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2 flex items-center justify-center sm:justify-start gap-3">
+                      <h1 className="text-3xl sm:text-4xl font-headline uppercase font-bold tracking-tight mb-4 flex items-center justify-center sm:justify-start gap-3 text-primary">
                         {member.name}
-                        {member.role === 'Owner' && <Sparkles className="h-6 w-6 text-yellow-500 fill-yellow-500/20" />}
+                        {member.role === 'Owner' && <Sparkles className="h-8 w-8 text-yellow-500 fill-yellow-500" />}
                       </h1>
                       <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
                         {member.role && (
-                          <Badge variant="secondary" className="px-3 py-1 text-sm bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">
+                          <Badge variant="secondary" className="px-3 py-1 text-xs font-bold uppercase tracking-widest bg-primary/20 text-primary hover:bg-primary/30 border-2 border-primary/50 rounded-none">
                             <Shield className="w-3 h-3 mr-1.5" />
                             {member.role}
                           </Badge>
                         )}
-                        <span className="flex items-center text-sm text-muted-foreground bg-muted/50 px-3 py-1 rounded-full border border-white/5">
+                        <span className="flex items-center text-xs font-bold uppercase tracking-widest text-muted-foreground bg-background px-3 py-1 rounded-none border-2 border-white/10 shadow-[2px_2px_0_0_rgba(255,255,255,0.05)]">
                           <Calendar className="w-3 h-3 mr-1.5" />
-                          Bergabung {joinDate}
+                          JOINED: {joinDate}
                         </span>
                       </div>
                     </div>
@@ -168,7 +159,7 @@ export default function ProfilePage({ params }: { params: Promise<{ slug: string
                         if (url) {
                           const Icon = socialIcons[key] || socialIcons.twitter;
                           return (
-                            <Button key={key} size="icon" variant="outline" className="h-10 w-10 rounded-full bg-background/50 hover:bg-primary/10 hover:text-primary hover:border-primary/50 transition-all" asChild>
+                            <Button key={key} size="icon" variant="outline" className="h-12 w-12 rounded-none border-4 border-white/10 bg-background/80 hover:bg-primary/20 hover:text-primary hover:border-primary/50 transition-all shadow-[4px_4px_0_0_rgba(0,0,0,0.5)] hover:shadow-[2px_2px_0_0_rgba(0,0,0,0.5)] hover:translate-y-[2px] hover:translate-x-[2px]" asChild>
                               <Link href={url as string} target="_blank" rel="noopener noreferrer">
                                 <Icon className="h-5 w-5" />
                               </Link>
@@ -186,17 +177,17 @@ export default function ProfilePage({ params }: { params: Promise<{ slug: string
                 {/* Main Content */}
                 <div className="lg:col-span-2 space-y-8">
                   {/* About Section */}
-                  <Card className="bg-background/40 backdrop-blur-md border-white/5 shadow-sm">
-                    <CardHeader>
-                      <CardTitle className="text-xl font-semibold flex items-center gap-2">
-                        <Hash className="h-5 w-5 text-primary" />
-                        Tentang Saya
+                  <Card className="bg-background/80 backdrop-blur-md border-4 border-white/10 shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] rounded-none">
+                    <CardHeader className="border-b-4 border-white/10 pb-4">
+                      <CardTitle className="text-xl font-headline uppercase font-bold flex items-center gap-2 text-primary">
+                        <Hash className="h-5 w-5" />
+                        CHARACTER LORE
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground leading-relaxed text-lg">
+                    <CardContent className="pt-6">
+                      <p className="text-muted-foreground leading-relaxed text-lg font-body">
                         {member.about || "Belum ada deskripsi diri."}
-                        {!member.about && "Halo! Saya adalah bagian dari komunitas Parade Palace yang luar biasa ini."}
+                        {!member.about && "Halo! Saya adalah bagian dari komunitas Carane yang luar biasa ini."}
                       </p>
                     </CardContent>
                   </Card>
@@ -206,31 +197,31 @@ export default function ProfilePage({ params }: { params: Promise<{ slug: string
 
                 {/* Sidebar Info */}
                 <div className="space-y-6">
-                  <Card className="bg-background/40 backdrop-blur-md border-white/5 shadow-sm h-full">
-                    <CardHeader>
-                      <CardTitle className="text-lg font-semibold">Informasi Cepat</CardTitle>
+                  <Card className="bg-background/80 backdrop-blur-md border-4 border-white/10 shadow-[8px_8px_0_0_rgba(0,0,0,0.5)] rounded-none h-full">
+                    <CardHeader className="border-b-4 border-white/10 pb-4">
+                      <CardTitle className="text-lg font-headline uppercase font-bold text-accent">PLAYER STATS</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="flex items-center justify-between p-3 rounded-lg bg-muted/30">
-                        <span className="text-sm text-muted-foreground flex items-center gap-2">
-                          <MapPin className="h-4 w-4" /> Lokasi
+                    <CardContent className="space-y-4 pt-6">
+                      <div className="flex items-center justify-between p-3 rounded-none border-2 border-white/10 bg-black/40">
+                        <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                          <MapPin className="h-4 w-4" /> LOC
                         </span>
-                        <span className="font-medium text-sm">Indonesia</span>
+                        <span className="font-bold text-sm uppercase">Indonesia</span>
                       </div>
-                      <div className="flex items-center justify-between p-3 rounded-lg bg-muted/30">
-                        <span className="text-sm text-muted-foreground flex items-center gap-2">
-                          <Mail className="h-4 w-4" /> Kontak
+                      <div className="flex items-center justify-between p-3 rounded-none border-2 border-white/10 bg-black/40">
+                        <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                          <Mail className="h-4 w-4" /> COMMS
                         </span>
-                        <span className="font-medium text-sm">Via Discord</span>
+                        <span className="font-bold text-sm uppercase">Discord</span>
                       </div>
 
-                      <div className="pt-4 border-t border-white/10">
-                        <h4 className="text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wider">Badge Komunitas</h4>
-                        <div className="flex flex-wrap gap-2">
-                          <Badge variant="outline" className="bg-yellow-500/10 text-yellow-500 border-yellow-500/20 hover:bg-yellow-500/20">
-                            Warga Palace
+                      <div className="pt-6 mt-4">
+                        <h4 className="text-sm font-headline font-bold mb-4 text-primary uppercase">ACHIEVEMENTS</h4>
+                        <div className="flex flex-wrap gap-3">
+                          <Badge variant="outline" className="px-3 py-1.5 font-bold uppercase tracking-widest bg-yellow-500/20 text-yellow-500 border-2 border-yellow-500/50 hover:bg-yellow-500/30 rounded-none shadow-[2px_2px_0_0_rgba(234,179,8,0.3)]">
+                            Warga Carane
                           </Badge>
-                          <Badge variant="outline" className="bg-blue-500/10 text-blue-500 border-blue-500/20 hover:bg-blue-500/20">
+                          <Badge variant="outline" className="px-3 py-1.5 font-bold uppercase tracking-widest bg-blue-500/20 text-blue-500 border-2 border-blue-500/50 hover:bg-blue-500/30 rounded-none shadow-[2px_2px_0_0_rgba(59,130,246,0.3)]">
                             Verified
                           </Badge>
                         </div>

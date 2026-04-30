@@ -34,7 +34,7 @@ export default function FeaturesPage() {
               Fitur <span className="text-primary">Server</span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Jelajahi ekosistem unik dan bot canggih yang menjadikan Parade Palace komunitas yang hidup, interaktif, dan penuh warna.
+              Jelajahi ekosistem unik dan bot canggih yang menjadikan Carane komunitas yang hidup, interaktif, dan penuh warna.
             </p>
           </div>
         </FadeIn>

@@ -43,7 +43,7 @@ export default function EventsPage() {
           Jadwal <span className="text-primary">Acara</span>
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Ikuti keseruannya! Inilah jadwal acara mingguan di Parade Palace.
+          Ikuti keseruannya! Inilah jadwal acara mingguan di Carane.
         </p>
       </div>
 

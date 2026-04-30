@@ -55,8 +55,8 @@ export function Typewriter({
     return () => clearTimeout(timeoutId);
   }, [charIndex, isDeleting, textIndex, texts, typingDelay, deletingDelay, pauseDelay]);
 
-  // Split text for styling "Parade Palace"
-  const specialText = "Parade Palace";
+  // Split text for styling "Carane"
+  const specialText = "Carane";
   const parts = currentText.split(specialText);
   
   const displayText = parts.length > 1 && currentText.includes(specialText)

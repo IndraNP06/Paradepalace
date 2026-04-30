@@ -105,7 +105,7 @@ export default function AdminPage() {
                 <div>
                     <h2 className="text-3xl font-bold tracking-tight">Dashboard Overview</h2>
                     <p className="text-muted-foreground mt-1">
-                        Ringkasan aktivitas dan konten website Parade Palace.
+                        Ringkasan aktivitas dan konten website Carane.
                     </p>
                 </div>
             </div>
@@ -126,7 +126,7 @@ export default function AdminPage() {
                 <StatsCard
                     title="Versi Sistem"
                     value="v1.0.0"
-                    description="Parade Palace Web"
+                    description="Carane Web"
                     icon={Calendar}
                 />
             </div>

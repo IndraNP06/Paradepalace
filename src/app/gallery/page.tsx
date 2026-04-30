@@ -68,7 +68,7 @@ export default function GalleryPage() {
               Galeri <span className="text-primary">Komunitas</span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Koleksi momen terbaik, kenangan seru, dan kreativitas tanpa batas dari warga Parade Palace.
+              Koleksi momen terbaik, kenangan seru, dan kreativitas tanpa batas dari warga Carane.
             </p>
           </div>
         </FadeIn>

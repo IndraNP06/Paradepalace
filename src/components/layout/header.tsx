@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
@@ -34,8 +35,8 @@ export default function Header() {
       )}>
         <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-            <DiscordLogo className="h-8 w-8 text-primary drop-shadow-[0_0_8px_rgba(var(--primary),0.5)]" />
-            <span className="font-headline text-xl font-bold tracking-tight">Parade Palace</span>
+            <Image src="/asset/carane_server.png" alt="Carane Logo" width={32} height={32} className="h-8 w-8 object-cover rounded-none" style={{ imageRendering: 'pixelated' }} />
+            <span className="font-headline text-xl font-bold tracking-tight">Carane</span>
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
@@ -99,8 +100,8 @@ export default function Header() {
                 <SheetDescription className="sr-only">Navigation menu for mobile devices</SheetDescription>
                 <div className="flex flex-col gap-8 p-6">
                   <Link href="/" className="flex items-center gap-2">
-                    <DiscordLogo className="h-8 w-8 text-primary" />
-                    <span className="font-headline text-xl font-bold">Parade Palace</span>
+                    <Image src="/asset/carane_server.png" alt="Carane Logo" width={32} height={32} className="h-8 w-8 object-cover rounded-none" style={{ imageRendering: 'pixelated' }} />
+                    <span className="font-headline text-xl font-bold">Carane</span>
                   </Link>
                   <nav className="flex flex-col gap-6">
                     {navLinks.map((link) => (
