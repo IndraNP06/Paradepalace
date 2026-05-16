@@ -6,9 +6,10 @@ import { db } from "@/lib/firebase"
 import { GalleryDialog } from "./gallery-dialog"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Loader2, Pencil, Trash2, Plus } from "lucide-react"
+import { Loader2, Pencil, Trash2, Plus, Tag } from "lucide-react"
 import Image from "next/image"
 import { useToast } from "@/hooks/use-toast"
+import { Badge } from "@/components/ui/badge"
 import {
     AlertDialog,
     AlertDialogAction,
@@ -25,6 +26,7 @@ interface GalleryItem {
     id: string
     description: string
     imageUrl: string
+    category?: string
 }
 
 export default function AdminGalleryPage() {
@@ -111,6 +113,12 @@ export default function AdminGalleryPage() {
                                     fill
                                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
+                                <div className="absolute top-2 right-2">
+                                    <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm border-white/20 font-semibold flex items-center gap-1 shadow-sm">
+                                        <Tag className="w-3 h-3" />
+                                        {item.category || "Random"}
+                                    </Badge>
+                                </div>
                             </div>
                             <CardContent className="p-4">
                                 <p className="text-sm text-foreground line-clamp-2 min-h-[40px] mb-4">

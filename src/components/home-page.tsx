@@ -41,8 +41,8 @@ export function HomePage({ stats, team }: HomePageProps) {
                 {heroImage && (
                     <>
                         <Image
-                            src="/asset/carane_server.png"
-                            alt="Carane Hero Background"
+                            src="/asset/Carena_server.png"
+                            alt="Carena Hero Background"
                             fill
                             className="absolute inset-0 -z-20 object-cover brightness-[.15]"
                             style={{ imageRendering: 'pixelated' }}
@@ -58,7 +58,7 @@ export function HomePage({ stats, team }: HomePageProps) {
                         <FadeIn delay={0.2} className="text-center lg:text-left flex flex-col items-center lg:items-start">
                             <Typewriter
                                 texts={[
-                                    'Selamat Datang di Carane',
+                                    'Selamat Datang di Carena',
                                     'Komunitas Discord'
                                 ]}
                                 className="font-headline text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight"
@@ -74,11 +74,11 @@ export function HomePage({ stats, team }: HomePageProps) {
                                         <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                     </Link>
                                 </Button>
-                                <Button size="lg" variant="outline" className="h-12 px-8 text-base font-bold border-4 border-white/20 bg-black/50 hover:bg-white/10 backdrop-blur-sm rounded-none shadow-[4px_4px_0_0_rgba(255,255,255,0.1)] hover:shadow-[2px_2px_0_0_rgba(255,255,255,0.1)] hover:translate-y-[2px] hover:translate-x-[2px] uppercase tracking-widest" asChild>
+                                {/* <Button size="lg" variant="outline" className="h-12 px-8 text-base font-bold border-4 border-white/20 bg-black/50 hover:bg-white/10 backdrop-blur-sm rounded-none shadow-[4px_4px_0_0_rgba(255,255,255,0.1)] hover:shadow-[2px_2px_0_0_rgba(255,255,255,0.1)] hover:translate-y-[2px] hover:translate-x-[2px] uppercase tracking-widest" asChild>
                                     <Link href="/gallery">
                                         Lihat Galeri
                                     </Link>
-                                </Button>
+                                </Button> */}
                             </div>
                         </FadeIn>
 
@@ -88,8 +88,8 @@ export function HomePage({ stats, team }: HomePageProps) {
                             <div className="relative group w-full h-full flex items-center justify-center">
                                 <div className="absolute inset-4 bg-gradient-to-tr from-primary/50 to-purple-600/50 opacity-0 group-hover:opacity-75 blur-xl transition duration-700 animate-tilt"></div>
                                 <Image
-                                    src="/asset/carane_server.png"
-                                    alt="Carane Server Pixel Art"
+                                    src="/asset/Carena_server.png"
+                                    alt="Carena Server Pixel Art"
                                     width={500}
                                     height={500}
                                     className="relative w-4/5 h-4/5 object-cover rounded-none shadow-[8px_8px_0_0_rgba(0,0,0,0.8)] border-4 border-primary animate-float"
@@ -125,6 +125,41 @@ export function HomePage({ stats, team }: HomePageProps) {
                 </div>
             </section>
 
+            {/* CTA / Banner Section */}
+            <section className="py-24 relative overflow-hidden bg-background">
+                <div className="container mx-auto max-w-7xl px-6 relative z-10">
+                    <div className="relative flex flex-col items-center justify-center border-4 border-white/10 p-8 sm:p-16 shadow-[8px_8px_0_0_rgba(0,0,0,0.8)] group/container min-h-[400px] overflow-hidden">
+                        {/* Background Image */}
+                        <Image
+                            src="/asset/banner_DC.png"
+                            alt="Carena Discord Server Banner"
+                            fill
+                            className="absolute inset-0 object-cover -z-20 brightness-[0.35] group-hover/container:brightness-[0.5] group-hover/container:scale-105 transition-all duration-700"
+                            style={{ imageRendering: 'pixelated' }}
+                        />
+
+                        {/* Decorative Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent -z-10" />
+                        <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover/container:opacity-100 transition-opacity duration-700 -z-10 mix-blend-overlay" />
+
+                        {/* Text CTA */}
+                        <FadeIn delay={0.2} className="flex flex-col items-center text-center z-10 max-w-3xl">
+                            <h2 className="font-headline text-3xl sm:text-5xl font-bold tracking-tight mb-6 text-white uppercase drop-shadow-lg">
+                                Lebih Dari Sekedar <span className="text-primary">Mabar</span>
+                            </h2>
+                            <p className="text-lg sm:text-xl text-gray-200 leading-relaxed mb-10 drop-shadow-md font-body">
+                                Gak cuman Jago di Lobby, Orang-Orang Carena Juga Sering Flexing karya Disini. Dari Iseng Ngoprek Animasi 3D, Ngedit Video, Sampe Momen Random pas lagi Ngumpul. Nggak percaya? Tenang, hal random aja bisa jadi karya 😎
+                            </p>
+                            <Button size="lg" className="h-12 px-8 sm:px-16 w-full sm:w-auto text-base font-bold transition-all rounded-none border-4 border-primary bg-primary text-primary-foreground shadow-[4px_4px_0_0_rgba(255,255,255,0.2)] hover:shadow-[2px_2px_0_0_rgba(255,255,255,0.2)] hover:translate-y-[2px] hover:translate-x-[2px] group uppercase tracking-widest" asChild>
+                                <Link href="/gallery" className="flex items-center justify-center w-full">
+                                    Arsip Carena
+                                </Link>
+                            </Button>
+                        </FadeIn>
+                    </div>
+                </div>
+            </section>
+
             {/* Team Section */}
             <section className="py-24 sm:py-32 bg-secondary/5 relative overflow-hidden">
                 {/* Decorative Grid */}
@@ -137,7 +172,7 @@ export function HomePage({ stats, team }: HomePageProps) {
                                 Temui <span className="text-primary">Tim Kami</span>
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Orang-orang berbakat yang bekerja di balik layar untuk menjadikan Carane komunitas yang aman dan menyenangkan.
+                                Orang-orang berbakat yang bekerja di balik layar untuk menjadikan Carena komunitas yang aman dan menyenangkan.
                             </p>
                         </div>
                     </FadeIn>
@@ -163,9 +198,13 @@ export function HomePage({ stats, team }: HomePageProps) {
                                             </div>
 
                                             <CardTitle className="text-xl font-bold mb-2 group-hover:text-primary transition-colors font-headline uppercase">{member.name}</CardTitle>
-                                            <Badge variant="secondary" className="mb-4 px-3 py-1 bg-secondary/80 group-hover:bg-primary/20 group-hover:text-primary transition-colors border-2 border-white/10 rounded-none font-bold uppercase tracking-wider">
-                                                {member.role}
-                                            </Badge>
+                                            <div className="flex flex-wrap gap-2 justify-center mb-4">
+                                                {member.role?.split(',').map((r: string, i: number) => (
+                                                    <Badge key={i} variant="secondary" className="px-3 py-1 bg-secondary/80 group-hover:bg-primary/20 group-hover:text-primary transition-colors border-2 border-white/10 rounded-none font-bold uppercase tracking-wider">
+                                                        {r.trim()}
+                                                    </Badge>
+                                                ))}
+                                            </div>
                                         </Card>
                                     </div>
                                 </Link>

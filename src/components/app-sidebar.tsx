@@ -48,7 +48,7 @@ const data = {
     },
     teams: [
         {
-            name: "Carane",
+            name: "Carena",
             logo: GalleryVerticalEnd,
             plan: "Enterprise",
         },
@@ -96,10 +96,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         <SidebarMenuButton size="lg" asChild>
                             <a href="#">
                                 <div className="flex aspect-square size-8 items-center justify-center rounded-none bg-sidebar-primary text-sidebar-primary-foreground overflow-hidden">
-                                    <Image src="/asset/carane_server.png" alt="Logo" width={32} height={32} className="object-cover" style={{ imageRendering: 'pixelated' }} />
+                                    <Image src="/asset/Carena_server.png" alt="Logo" width={32} height={32} className="object-cover" style={{ imageRendering: 'pixelated' }} />
                                 </div>
                                 <div className="grid flex-1 text-left text-sm leading-tight">
-                                    <span className="truncate font-semibold">Carane</span>
+                                    <span className="truncate font-semibold">Carena</span>
                                     <span className="truncate text-xs">Admin Panel</span>
                                 </div>
                             </a>

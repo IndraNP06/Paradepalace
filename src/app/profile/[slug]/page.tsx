@@ -187,7 +187,7 @@ export default function ProfilePage({ params }: { params: Promise<{ slug: string
                     <CardContent className="pt-6">
                       <p className="text-muted-foreground leading-relaxed text-lg font-body">
                         {member.about || "Belum ada deskripsi diri."}
-                        {!member.about && "Halo! Saya adalah bagian dari komunitas Carane yang luar biasa ini."}
+                        {!member.about && "Halo! Saya adalah bagian dari komunitas Carena yang luar biasa ini."}
                       </p>
                     </CardContent>
                   </Card>
@@ -219,7 +219,7 @@ export default function ProfilePage({ params }: { params: Promise<{ slug: string
                         <h4 className="text-sm font-headline font-bold mb-4 text-primary uppercase">ACHIEVEMENTS</h4>
                         <div className="flex flex-wrap gap-3">
                           <Badge variant="outline" className="px-3 py-1.5 font-bold uppercase tracking-widest bg-yellow-500/20 text-yellow-500 border-2 border-yellow-500/50 hover:bg-yellow-500/30 rounded-none shadow-[2px_2px_0_0_rgba(234,179,8,0.3)]">
-                            Warga Carane
+                            Warga Carena
                           </Badge>
                           <Badge variant="outline" className="px-3 py-1.5 font-bold uppercase tracking-widest bg-blue-500/20 text-blue-500 border-2 border-blue-500/50 hover:bg-blue-500/30 rounded-none shadow-[2px_2px_0_0_rgba(59,130,246,0.3)]">
                             Verified

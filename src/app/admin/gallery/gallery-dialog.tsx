@@ -28,12 +28,20 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
 
 // Schema
 const formSchema = z.object({
     description: z.string().min(1, "Deskripsi harus diisi"),
+    category: z.string().min(1, "Kategori harus dipilih"),
     // Image is handled separately via state since file input logic varies
 })
 
@@ -41,6 +49,7 @@ interface GalleryItem {
     id: string
     description: string
     imageUrl: string
+    category?: string
 }
 
 interface GalleryDialogProps {
@@ -75,6 +84,7 @@ export function GalleryDialog({ item, trigger, onSuccess, open: constrainedOpen,
         resolver: zodResolver(formSchema),
         defaultValues: {
             description: item?.description || "",
+            category: item?.category || "Random",
         },
     })
 
@@ -160,6 +170,7 @@ export function GalleryDialog({ item, trigger, onSuccess, open: constrainedOpen,
 
                 await updateDoc(doc(db, "gallery_items", item.id), {
                     description: values.description,
+                    category: values.category,
                     imageUrl: url,
                     updatedAt: serverTimestamp(),
                 })
@@ -171,6 +182,7 @@ export function GalleryDialog({ item, trigger, onSuccess, open: constrainedOpen,
                     const url = await uploadToCloudinary(file)
                     return addDoc(collection(db, "gallery_items"), {
                         description: values.description,
+                        category: values.category,
                         imageUrl: url,
                         createdAt: serverTimestamp(),
                     })
@@ -257,6 +269,29 @@ export function GalleryDialog({ item, trigger, onSuccess, open: constrainedOpen,
                                 </label>
                             </div>
                         </div>
+
+                        <FormField
+                            control={form.control}
+                            name="category"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Kategori (Untuk Semua)</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Pilih kategori" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="Meet">Meet</SelectItem>
+                                            <SelectItem value="Art">Art</SelectItem>
+                                            <SelectItem value="Random">Random</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
 
                         <FormField
                             control={form.control}

@@ -43,7 +43,7 @@ interface RecentMember {
 }
 
 export default function AdminPage() {
-    const { isAuthenticated } = useAuth();
+    const { isAuthenticated, user } = useAuth();
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(true);
     const [stats, setStats] = useState<StatData>({ teamCount: 0, galleryCount: 0 });
@@ -105,9 +105,35 @@ export default function AdminPage() {
                 <div>
                     <h2 className="text-3xl font-bold tracking-tight">Dashboard Overview</h2>
                     <p className="text-muted-foreground mt-1">
-                        Ringkasan aktivitas dan konten website Carane.
+                        Ringkasan aktivitas dan konten website Carena.
                     </p>
                 </div>
+                {/* DEV ONLY: Elevate to admin if not admin */}
+                {user?.role !== "admin" && (
+                    <Button
+                        variant="destructive"
+                        onClick={async () => {
+                            try {
+                                const { firebaseAuth, db } = await import('@/lib/firebase');
+                                const { doc, setDoc } = await import('firebase/firestore');
+                                if (firebaseAuth.currentUser) {
+                                    // Use setDoc with merge so it creates the document if it doesn't exist
+                                    await setDoc(doc(db, "users", firebaseAuth.currentUser.uid), {
+                                        role: "admin",
+                                        email: firebaseAuth.currentUser.email,
+                                        name: firebaseAuth.currentUser.displayName || "Admin"
+                                    }, { merge: true });
+                                    alert("Sukses! Anda sekarang adalah Admin. Silakan refresh (F5) halaman ini.");
+                                    window.location.reload();
+                                }
+                            } catch (e: any) {
+                                alert("Gagal mengupdate role: " + e.message);
+                            }
+                        }}
+                    >
+                        Claim Admin Role (Dev)
+                    </Button>
+                )}
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -125,8 +151,8 @@ export default function AdminPage() {
                 />
                 <StatsCard
                     title="Versi Sistem"
-                    value="v1.0.0"
-                    description="Carane Web"
+                    value="v1.2.0"
+                    description="Carena Web"
                     icon={Calendar}
                 />
             </div>

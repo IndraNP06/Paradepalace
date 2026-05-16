@@ -31,7 +31,7 @@ export function Typewriter({
   useEffect(() => {
     const handleTyping = () => {
       const fullText = texts[textIndex];
-      
+
       if (isDeleting) {
         if (charIndex > 0) {
           setCurrentText(fullText.substring(0, charIndex - 1));
@@ -55,16 +55,16 @@ export function Typewriter({
     return () => clearTimeout(timeoutId);
   }, [charIndex, isDeleting, textIndex, texts, typingDelay, deletingDelay, pauseDelay]);
 
-  // Split text for styling "Carane"
-  const specialText = "Carane";
+  // Split text for styling "Carena"
+  const specialText = "Carena";
   const parts = currentText.split(specialText);
-  
+
   const displayText = parts.length > 1 && currentText.includes(specialText)
     ? <>
-        {parts[0]}
-        <span className={textClassName}>{specialText}</span>
-        {parts[1]}
-      </>
+      {parts[0]}
+      <span className={textClassName}>{specialText}</span>
+      {parts[1]}
+    </>
     : currentText;
 
   return (

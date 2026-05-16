@@ -35,8 +35,8 @@ export default function Header() {
       )}>
         <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-            <Image src="/asset/carane_server.png" alt="Carane Logo" width={32} height={32} className="h-8 w-8 object-cover rounded-none" style={{ imageRendering: 'pixelated' }} />
-            <span className="font-headline text-xl font-bold tracking-tight">Carane</span>
+            <Image src="/asset/Carena_server.png" alt="Carena Logo" width={32} height={32} className="h-8 w-8 object-cover rounded-none" style={{ imageRendering: 'pixelated' }} />
+            <span className="font-headline text-xl font-bold tracking-tight">Carena</span>
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
@@ -100,8 +100,8 @@ export default function Header() {
                 <SheetDescription className="sr-only">Navigation menu for mobile devices</SheetDescription>
                 <div className="flex flex-col gap-8 p-6">
                   <Link href="/" className="flex items-center gap-2">
-                    <Image src="/asset/carane_server.png" alt="Carane Logo" width={32} height={32} className="h-8 w-8 object-cover rounded-none" style={{ imageRendering: 'pixelated' }} />
-                    <span className="font-headline text-xl font-bold">Carane</span>
+                    <Image src="/asset/Carena_server.png" alt="Carena Logo" width={32} height={32} className="h-8 w-8 object-cover rounded-none" style={{ imageRendering: 'pixelated' }} />
+                    <span className="font-headline text-xl font-bold">Carena</span>
                   </Link>
                   <nav className="flex flex-col gap-6">
                     {navLinks.map((link) => (

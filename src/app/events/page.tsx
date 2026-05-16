@@ -43,7 +43,7 @@ export default function EventsPage() {
           Jadwal <span className="text-primary">Acara</span>
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Ikuti keseruannya! Inilah jadwal acara mingguan di Carane.
+          Ikuti keseruannya! Inilah jadwal acara mingguan di Carena.
         </p>
       </div>
 
@@ -67,9 +67,8 @@ export default function EventsPage() {
               <p className="text-sm text-muted-foreground">{format(day, 'EEE', { locale: id })}</p>
               <Button
                 variant={isSameDay(day, selectedDay) ? 'default' : 'outline'}
-                className={`mt-1 w-12 h-12 rounded-full flex flex-col items-center justify-center relative ${
-                  isSameDay(day, new Date()) ? 'border-primary' : ''
-                }`}
+                className={`mt-1 w-12 h-12 rounded-full flex flex-col items-center justify-center relative ${isSameDay(day, new Date()) ? 'border-primary' : ''
+                  }`}
                 onClick={() => setSelectedDay(day)}
               >
                 <span className="text-xl font-bold">{format(day, 'd')}</span>
@@ -95,14 +94,14 @@ export default function EventsPage() {
                       <div className="bg-primary/10 p-3 rounded-lg">
                         <Icon className="h-6 w-6 text-primary" />
                       </div>
-      
+
                       <div className='w-full'>
                         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
-                           <CardTitle className="font-headline text-xl text-primary">{event.title}</CardTitle>
-                           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <Clock className="h-4 w-4" />
-                              <span>{event.time}</span>
-                           </div>
+                          <CardTitle className="font-headline text-xl text-primary">{event.title}</CardTitle>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Clock className="h-4 w-4" />
+                            <span>{event.time}</span>
+                          </div>
                         </div>
                         <CardDescription className="mt-1">{event.description}</CardDescription>
                       </div>

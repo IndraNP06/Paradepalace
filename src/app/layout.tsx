@@ -7,10 +7,10 @@ import { AuthProvider } from '@/context/auth-context';
 import PixelStars from '@/components/pixel-stars';
 
 export const metadata: Metadata = {
-  title: 'Carane | Discord Community',
-  description: 'The official community for Carane.',
+  title: 'Carena | Discord Community',
+  description: 'The official community for Carena.',
   icons: {
-    icon: '/asset/carane_server.png',
+    icon: '/asset/Carena_server.png',
   },
 };
 
